@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gaming Landing - Hero</title>
+  <style>
+    :root{
+      --bg-dark:#200606;
+      --purple-1:#540d0b;
+      --purple-2:#760000;
+      --accent1:#ff6e6e;
+      --accent2:#ffc67b;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: #baa1a4;
+      background-color:var(--bg-dark);
+      /* Composite background: subtle grid + multi-stop radial/linear gradients */
+      background-image:
+        /* vertical grid lines */
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+        /* horizontal grid lines */
+        linear-gradient(0deg, rgba(155, 11, 11, 0.02) 1px, transparent 1px),
+        /* soft vignette */
+        radial-gradient(1200px 600px at 10% 90%, rgba(13, 1, 0, 0.35), transparent 30%),
+        radial-gradient(900px 700px at 90% 10%, rgba(14, 5, 28, 0.662), transparent 30%),
+        linear-gradient(180deg, rgba(8, 1, 1, 0.9) 0%, rgba(32, 13, 5, 0.95) 30%, rgb(3, 1, 9) 100%);
+      background-blend-mode: overlay, overlay, normal, normal, normal;
+      /* grid spacing */
+      background-size: 80px 80px, 80px 80px, auto, auto, auto;
+      /* fallback */
+      color-scheme: dark;
+      display:flex;
+      justify-content:center;
+      text-align:center;
+      padding:48px 24px;
+    }
+
+    /* subtle animated gradient overlay (gloss) */
+    .bg-glow{
+      position:fixed;inset:0;pointer-events:none;mix-blend-mode:soft-light;opacity:0.65;
+      background: radial-gradient(600px 300px at 30% 40%, rgba(255,110,199,0.12), transparent 12%),
+                  radial-gradient(500px 300px at 70% 60%, rgba(123,209,255,0.10), transparent 12%);
+      animation: floatGlow 12s ease-in-out infinite;
+      z-index:0;
+    }
+    @keyframes floatGlow{
+      0%{transform:translateY(0) scale(1)}
+      50%{transform:translateY(-18px) scale(1.02)}
+      100%{transform:translateY(0) scale(1)}
+    }
+
+    .container{position:relative;z-index:2;max-width:1100px;width:100%;}
+    .tag{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;background:rgba(0,0,0,0.18);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.04);font-size:14px;margin-bottom:22px}
+
+    h1{font-size:clamp(36px,6vw,96px);line-height:0.95;margin:0;font-weight:800;letter-spacing:-1px}
+    h1 .grad{background:linear-gradient(90deg,var(--accent1), #c17, var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;padding-left:6px}
+
+    p.lead{color:rgba(255,255,255,0.85);opacity:0.95;margin:20px 0 36px;font-size:clamp(14px,1.6vw,20px)}
+
+    .btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;border:1px solid rgba(255,255,255,0.06);text-decoration:none;color:white;font-weight:600}
+    .btn.primary{background:linear-gradient(90deg,var(--accent1), #ff416c);box-shadow:0 6px 24px rgba(255,92,150,0.12);border:none}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);opacity:0.9}
+
+    /* scroll indicator */
+    .scroll-indicator{margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,0.6);font-size:13px}
+    .mouse{width:28px;height:40px;border:1.8px solid rgba(255,255,255,0.08);border-radius:16px;position:relative}
+    .wheel{width:4px;height:6px;background:rgba(255,255,255,0.18);position:absolute;left:50%;transform:translateX(-50%);top:8px;border-radius:2px;animation:wheelMove 1.6s infinite}
+    @keyframes wheelMove{0%{transform:translate(-50%,0);opacity:1}50%{transform:translate(-50%,8px);opacity:.4}100%{transform:translate(-50%,0);opacity:1}}
+
+    /* responsiveness tweaks */
+    @media (max-width:640px){
+      .tag{font-size:13px;padding:6px 14px}
+      p.lead{margin:18px 0 28px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <header style="position:fixed;top:0;left:0;width:100%;display:flex;justify-content:center;padding:20px 0;z-index:10;pointer-events:none;">
+  <nav style="display:flex;gap:40px;align-items:center;font-weight:600;pointer-events:auto;">
+    <a href="#games" style="text-decoration:none;color:white;opacity:.8;">Games</a>
+    <a href="#home" style="text-decoration:none;color:white;opacity:.8; font-family: 'Dancing Script', cursive;">NtaliGames</a>
+    <a href="#socials" style="text-decoration:none;color:white;opacity:.8;">Socials</a>
+  </nav>
+</header>
+<hr style="margin-top:-20px; border:none; height:3px; background:lch(100% 0.01 296.81 / 0.2); width:25%; max-width:1100px; position:fixed; top:72px; left:50%; transform:translateX(-50%); z-index:10; pointer-events:none;">
+
+<div class="container">
+  <section id="home" style="height:100vh; display:flex; align-items:center; justify-content:center;">
+    <h1>Welcome to NtaliGames</h1>
+    
+  </section>
+  <section id="games" style="height: 50vh;display:flex; align-items:center; justify-content:center;">
+    <!--<h2 style="font-size:48; color:white;">Games Section</h2>-->
+    <div style="border:2px solid lch(100% 0.01 296.81 / 0.2); border-radius:12px;
+            padding:20px; width:300px; margin:20px auto;">
+  <h3 style="margin-top:0;">Checkmate Arena</h3>
+  <p style="opacity:0.8;">Coming Soon...</p>
+</div>
+
+  </section>
+  <section id="socials" style="height: 50vh; display:flex; align-items:center; justify-content:center;">
+    <button style=" background: linear-gradient(90deg, var(--accent1), #ff416c); 
+                    border: none; 
+                    border-radius: 999px; 
+                    padding: 12px 22px; 
+                    display: inline-flex; 
+                    align-items: center; 
+                    gap: 10px; 
+                    color: white; 
+                    font-weight: 600; 
+                    text-decoration: none;
+                    box-shadow: 0 6px 24px rgba(255, 92, 150, 0.12);"
+            onclick="window.location.href='https://discord.gg/hwse8XRr';">
+       <img src="discord.png" alt="Button Image" width="50" height="50">
+    </button>
+
+</div>
+</body>
+</html>
