@@ -156,6 +156,20 @@
     font-weight: 600;
   }
 
+  .ng-countdown {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    padding: 4px 14px;
+    min-width: 110px;
+    text-align: center;
+  }
+
+  .ng-badge--live {
+    background: rgba(60,255,120,0.15);
+    color: #6fffa0;
+    border-color: rgba(60,255,120,0.3);
+  }
   .ng-game-preview {
     color: rgba(255,255,255,0.5);
     font-size: 14px;
