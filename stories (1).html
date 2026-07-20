@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Read upcoming story lore and narrative drops from NtaliGames, the indie studio behind Rush Track.">
+<meta name="keywords" content="NtaliGames, Rush Track, indie games, story, lore, game development">
+<meta name="author" content="NtaliGames, Ntali, NickolasNtal">
+<title>Stories - NtaliGames</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="ng-nav">
+  <a class="ng-logo" href="index.html">NtaliGames</a>
+  <div class="ng-nav-links">
+    <a href="index.html#ng-games">Games</a>
+    <a href="stories.html" class="ng-nav-active">Stories</a>
+    <a href="index.html#ng-socials">Socials</a>
+  </div>
+</nav>
+
+<section class="ng-section ng-stories-section" id="ng-stories">
+  <h2>Stories</h2>
+  <p class="ng-stories-intro">Lore drops and narrative previews from the worlds we're building. Tap a title to read.</p>
+
+  <!-- One story card per story. Duplicate this whole .ng-story-card block to add more later. -->
+  <div class="ng-game-card ng-story-card" id="story-rushtrack-origins" onclick="toggleCard('story-rushtrack-origins')">
+    <div class="ng-game-header">
+      <div>
+        <h3>Rush Track: Origins</h3>
+        <span class="ng-badge">Coming Soon</span>
+        <div class="ng-game-preview">Before the rails, before the run — how it all began.</div>
+      </div>
+      <span class="ng-arrow">▼</span>
+    </div>
+    <div class="ng-game-body">
+      <div class="ng-game-inner">
+
+        <!-- Option A: embed the PDF directly so it reads in-page -->
+        <iframe class="ng-story-pdf" src="stories/rushtrack-origins.pdf" title="Rush Track: Origins - full story" loading="lazy"></iframe>
+
+        <!-- Option B (alternative to the iframe above): paste the story text straight into the page instead
+        <div class="ng-story-text">
+          Your story text goes here. Line breaks are preserved automatically.
+        </div>
+        -->
+
+        <a class="ng-story-download" href="stories/rushtrack-origins.pdf" download>Download the PDF ↓</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer class="ng-footer">
+  © 2026 NtaliGames · Built with passion in Patras
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
